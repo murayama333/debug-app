@@ -25,7 +25,7 @@ public class MessageController {
 	@GetMapping
 	public String list(@ModelAttribute("messageForm") MessageForm messageForm, Model model) {
 		model.addAttribute("messages", messageMapper.findAll());
-		return "messages/list";
+		return "messages/lst";
 	}
 
 	@PostMapping
@@ -33,7 +33,7 @@ public class MessageController {
 			BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			model.addAttribute("messages", messageMapper.findAll());
-			return "messages/list";
+			return "messages/lst";
 		}
 		Message message = new Message();
 		message.setContent(messageForm.getContent());
