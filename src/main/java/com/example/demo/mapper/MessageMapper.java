@@ -14,6 +14,6 @@ public interface MessageMapper {
 	@Select("SELECT * FROM message ORDER BY created_at DESC")
 	List<Message> findAll();
 
-	@Insert("INSERT INTO message (content) VALUES (#{content})")
+	@Insert("INSERT INTO message (content) VALUES ('${content}')")
 	void insert(Message message);
 }
