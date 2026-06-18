@@ -30,7 +30,7 @@ public class MessageController {
 
 	@PostMapping
 	public String create(@Valid @ModelAttribute("messageForm") MessageForm messageForm,
-			BindingResult result, Model model) {
+			Model model, BindingResult result) {
 		if (result.hasErrors()) {
 			model.addAttribute("messages", messageMapper.findAll());
 			return "messages/list";
