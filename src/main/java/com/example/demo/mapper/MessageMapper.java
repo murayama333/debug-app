@@ -11,9 +11,9 @@ import com.example.demo.entity.Message;
 @Mapper
 public interface MessageMapper {
 
-	@Select("SELECT * FROM message ORDER BY created_at DESC")
+	@Select("SELECT * FROM mesage ORDER BY created_at DESC")
 	List<Message> findAll();
 
-	@Insert("INSERT INTO message (content) VALUES (#{content})")
+	@Insert("INSERT INTO mesage (content) VALUES (#{content})")
 	void insert(Message message);
 }
