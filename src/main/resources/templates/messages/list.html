@@ -10,7 +10,7 @@
 	<form th:action="@{/messages}" th:object="${messageForm}" method="post">
 		<input type="text" th:field="*{content}" placeholder="メッセージを入力">
 		<span th:if="${#fields.hasErrors('content')}" th:errors="*{content}" style="color: red;"></span>
-		<button type="submit">登録</button>
+		<button type="button">登録</button>
 	</form>
 
 	<ul>
